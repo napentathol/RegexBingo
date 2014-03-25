@@ -9,4 +9,4 @@ var regexApp = {
 };
 
 // Module
-regexApp.$ng = angular.module('dndModule', []);
+regexApp.$ng = angular.module('regexApp', []);
