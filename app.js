@@ -8,24 +8,25 @@ var express = require('express');
 /*
  * Build Models
  */
-var userModel = require('./model/user');
+var userModel = require('./model/UserModel');
+
+userModel.createUser();
 
 /*
  * Build Routes.
  */
-var routes = require('./routes/index');
-var userRoute = require('./routes/user');
+var indexRoute = require('./routes/IndexRoute');
+var userRoute = require('./routes/UserRoute');
+var test = require('./routes/TestRoute');
 
 /*
  * Build views from Routes.
  */
-var indexObject =routes.createObject(userModel);
+var indexObject = indexRoute.createObject(userModel);
 var userObject = userRoute.createObject(userModel);
 
 var http = require('http');
 var path = require('path');
-
-var test = require('./routes/test');
 
 var app = express();
 
