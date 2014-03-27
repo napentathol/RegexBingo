@@ -11,5 +11,7 @@ block content
                 div.panel-heading
                     | User Information
                 div.panel-body
-                    label(for="name") Username:
-                    input(type="text", name="name", ng-model="username", ng-init=username)
+                    div.form-group
+                        label.col-sm-2.control-label(for="name") Username:
+                        div.col-sm-10
+                            input.form-control(type="text", name="name", ng-model="username", ng-init=username)
