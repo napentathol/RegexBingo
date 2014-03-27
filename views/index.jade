@@ -7,10 +7,9 @@ block content
                 a.navbar-brand Regex Bingo
     div.container.regex-container
         div.content
-            | #{username}
-            br
-            | Remember
-            br
-            | --Never forget
-            br
-            | America
+            div.panel.panel-primary
+                div.panel-heading
+                    | User Information
+                div.panel-body
+                    label(for="name") Username:
+                    input(type="text", name="name", ng-model="username", ng-init=username)
