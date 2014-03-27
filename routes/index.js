@@ -3,6 +3,11 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+exports.createObject = function(userModel){
+    return {
+        index : function(req, res){
+            userModel.createUser();
+            res.render('index', { title: 'Express' });
+        }
+    };
 };
