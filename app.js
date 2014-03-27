@@ -5,12 +5,23 @@
 
 var express = require('express');
 
-var routes = require('./routes/index');
-var indexObject =routes.createObject(userModel);
-
+/*
+ * Build Models
+ */
 var userModel = require('./model/user');
+
+/*
+ * Build Routes.
+ */
+var routes = require('./routes/index');
 var userRoute = require('./routes/user');
+
+/*
+ * Build views from Routes.
+ */
+var indexObject =routes.createObject(userModel);
 var userObject = userRoute.createObject(userModel);
+
 var http = require('http');
 var path = require('path');
 
