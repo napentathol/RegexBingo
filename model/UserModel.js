@@ -31,10 +31,12 @@ exports.randomInt = function(min, max){
 };
 
 exports.findUser = function(ip,key){
-    for(var i in exports.list) {
-        if (exports.list.hasOwnProperty(i)) {
-            if (exports.list[i].key === key && exports.list[i].ip === ip) {
-                return exports.list[i];
+    if(key !== null) {
+        for (var i in exports.list) {
+            if (exports.list.hasOwnProperty(i)) {
+                if (exports.list[i].key === key && exports.list[i].ip === ip) {
+                    return exports.list[i];
+                }
             }
         }
     }
