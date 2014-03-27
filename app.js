@@ -10,8 +10,6 @@ var express = require('express');
  */
 var userModel = require('./model/UserModel');
 
-userModel.createUser();
-
 /*
  * Build Routes.
  */
