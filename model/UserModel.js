@@ -31,7 +31,7 @@ exports.randomInt = function(min, max){
 };
 
 exports.findUser = function(ip,key){
-    if(key !== null) {
+    if(key != null) {
         for (var i in exports.list) {
             if (exports.list.hasOwnProperty(i)) {
                 if (exports.list[i].key === key && exports.list[i].ip === ip) {
@@ -46,7 +46,7 @@ exports.findUser = function(ip,key){
 exports.findOrCreateUser = function(ip, key) {
     console.log("Attempting to find user with key: " + key);
     var user = exports.findUser(ip,key);
-    if(user === null){
+    if(user == null){
         user = exports.createKey(ip);
     }
     return user;
