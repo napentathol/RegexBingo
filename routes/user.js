@@ -3,6 +3,10 @@
  * GET users listing.
  */
 
-exports.list = function(req, res){
-  res.send("respond with a resource");
+exports.createObject = function(userModel){
+    return {
+        list : function(req, res){
+            res.send(JSON.stringify(userModel.list));
+        }
+    };
 };
