@@ -12,6 +12,8 @@ exports.createUser = function(ip) {
         username : "Some User",
         sendCookie : true
     };
+
+    console.log("Creating user: " + user.key);
     exports.list.push(user);
     return user;
 };
