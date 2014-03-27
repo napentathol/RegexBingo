@@ -44,11 +44,9 @@ exports.findUser = function(ip,key){
 };
 
 exports.findOrCreateUser = function(ip, key) {
-    console.log("Attempting to find user with key: " + key);
     var user = exports.findUser(ip,key);
-    console.log(JSON.stringify(user));
     if(user == null){
-        user = exports.createKey(ip);
+        user = exports.createUser(ip);
     }
     return user;
 };
@@ -61,7 +59,6 @@ exports.getCookieFromRequest = function(req){
 };
 
 exports.findUserFromRequest = function(req){
-    console.log("Attempting to find user from request.");
     var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     var key = exports.getCookieFromRequest(req);
     return exports.findOrCreateUser(ip,key);
