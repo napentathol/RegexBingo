@@ -4,8 +4,11 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var userModel = require('./model/user.js');
+
+var routes = require('./routes/index');
+var indexObject =routes.createObject(userModel);
+
+var userModel = require('./model/user');
 var userRoute = require('./routes/user');
 var userObject = userRoute.createObject(userModel);
 var http = require('http');
@@ -32,7 +35,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/', indexObject.index);
 app.get('/users', userObject.list);
 app.get('/test',test.test.handleRequest);
 
