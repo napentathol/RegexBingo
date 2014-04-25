@@ -19,6 +19,8 @@ block content
                     div.form-group
                         label.col-sm-2.control-label(for="name") Username:
                         div.col-sm-10
-                            form(ng-sumbit="sendUsername()")
+                            div.input-group.input-group-sm
                                 input.form-control(type="text", name="name", ng-model="username", ng-init='username="'+username+'"')
-                                input(type="submit", value="submit")
+                                span.input-group-btn
+                                    button.btn.btn-primary(type="button", ng-click="sendUsername()")
+                                        | Update
