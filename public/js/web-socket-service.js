@@ -5,7 +5,7 @@
 regexApp.addWebSocketService = function(){
     var service = {
         processMessage : function(msg){
-
+            service.ws.send(msg);
         }
     };
 

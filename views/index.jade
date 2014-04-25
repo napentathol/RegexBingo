@@ -8,7 +8,8 @@ block content
             nav.navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li
-                        | Welcome {{username}}!
+                        a
+                            | Welcome {{username}}!
     div.container.regex-container
         div.content
             div.panel.panel-primary
@@ -18,4 +19,4 @@ block content
                     div.form-group
                         label.col-sm-2.control-label(for="name") Username:
                         div.col-sm-10
-                            input.form-control(type="text", name="name", ng-model="username", ng-init='username="'+username+'"')
+                            input.form-control(type="text", name="name", ng-model="username", ng-sumbit="sendUsername", ng-init='username="'+username+'"')
