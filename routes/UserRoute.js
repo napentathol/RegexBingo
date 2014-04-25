@@ -9,7 +9,7 @@ exports.createObject = function(userModel){
             res.send(JSON.stringify(userModel.list));
         },
         update : function(req, res){
-            var user = userModel.findUserFromRequest(req)
+            var user = userModel.findUserFromRequest(req);
             user.username=req.body.username;
             res.send(JSON.stringify(user.username));
         }
