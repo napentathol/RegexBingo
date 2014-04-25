@@ -48,6 +48,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', indexObject.index);
 app.get('/users', userObject.list);
+spp.post('/users/update', userObject.update);
 app.get('/test',test.test.handleRequest);
 
 http.createServer(app).listen(app.get('port'), function(){
