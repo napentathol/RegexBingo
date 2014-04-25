@@ -9,7 +9,7 @@ exports.createObject = function(userModel){
             res.send(JSON.stringify(userModel.list));
         },
         update : function(req, res){
-            res.send(JSON.stringify(req));
+            res.send(JSON.stringify(req.body));
         }
     };
 };
