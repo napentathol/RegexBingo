@@ -5,13 +5,16 @@ block content
         div.container
             div.navbar-header
                 a.navbar-brand Regex Bingo
+            nav.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li
+                        | Welcome {{username}}!
     div.container.regex-container
         div.content
             div.panel.panel-primary
                 div.panel-heading
                     | User Information
                 div.panel-body
-                    | {{username}}
                     div.form-group
                         label.col-sm-2.control-label(for="name") Username:
                         div.col-sm-10
