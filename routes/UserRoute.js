@@ -9,7 +9,9 @@ exports.createObject = function(userModel){
             res.send(JSON.stringify(userModel.list));
         },
         update : function(req, res){
-            res.send(JSON.stringify(req.body));
+            var user = userModel.findUserFromRequest(req)
+            user.username=req.body.username;
+            res.send(JSON.stringify(user.username));
         }
     };
 };
